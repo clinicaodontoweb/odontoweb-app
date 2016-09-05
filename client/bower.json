@@ -1,0 +1,29 @@
+{
+  "name": "odontoweb-app",
+  "description": "odontoweb application",
+  "main": "index.js",
+  "authors": [
+    "Andre Nunes"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "javascript",
+    "angular"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.1.0",
+    "angular": "^1.5.8"
+  },
+  "devDependencies": {
+    "underscore": "^1.8.3",
+    "foundation-sites": "^6.2.3"
+  }
+}
