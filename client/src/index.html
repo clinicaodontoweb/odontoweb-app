@@ -2,62 +2,45 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="public/odontoweb-deps.min.css">
 	<link rel="stylesheet" href="public/odontoweb-app.min.css">
+	<link rel="stylesheet" href="public/foundation-icons.min.css">
 
 	<title>OdontoWeb: Sistema para gerenciamento de clínicas odontológicas</title>
 </head>
 <body>
+		
+	<div id="topbar-wrapper" class="float-left">
+		<div id="logo-wrapper" class="float-left">
+			<div id="logo" class="float-left"></div>
+			<h6 class="float-left show-for-medium">ODONTOWEB</h6>
+		</div>
+	</div>
 	
-	<div class="top-bar">
-	  <div class="top-bar-left">
-	    <ul class="dropdown menu" data-dropdown-menu>
-	      <li class="menu-text">Site Title</li>
-	      <li>
-	        <a href="#">One</a>
-	        <ul class="menu vertical">
-	          <li><a href="#">One</a></li>
-	          <li><a href="#">Two</a></li>
-	          <li><a href="#">Three</a></li>
-	        </ul>
-	      </li>
-	      <li><a href="#">Two</a></li>
-	      <li><a href="#">Three</a></li>
-	    </ul>
-	  </div>
-	  <div class="top-bar-right">
-	    <ul class="menu">
-	      <li><input type="search" placeholder="Search"></li>
-	      <li><button type="button" class="button">Search</button></li>
-	    </ul>
-	  </div>
+	<div id="wrapper">
+		<!-- MENU LATERAL -->
+		<div id="sidebar-wrapper">
+			<ul class="menu vertical">
+				<li class="menu-ativo">
+					<a href="#"><i class="fi-calendar medium"></i>Agenda</a>
+				</li>
+				<li>
+					<a href="#"><i class="fi-torsos medium"></i>Pacientes</a>
+				</li>
+				<li>
+					<a href="#"><i class="fi-page-add medium"></i>Cadastrados</a>
+				</li>
+				<li>
+					<a href="#"><i class="fi-widget medium"></i>Configurações</a>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- CONTEUDO -->
+		<div id="content-wrapper"></div>
 	</div>
 
-	<div class="alert callout" data-closable>
-	  <h5>This is Important!</h5>
-	  <p>But when you're done reading it, click the close button in the corner to dismiss this alert.</p>
-	  <p>I'm using the default <code>data-closable</code> parameters, and simply fade out.</p>
-	  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-	    <span aria-hidden="true">&times;</span>
-	  </button>
-	</div>
-
-	<p>
-	The <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle.">scarabaeus</span> hung quite clear of any branches, and, if allowed to fall, would have fallen at our feet. Legrand immediately took the scythe, and cleared with it a circular space, three or four yards in diameter, just beneath the insect, and, having accomplished this, ordered Jupiter to let go the string and come down from the tree.
-	</p>
-
-	<ul class="vertical menu" data-accordion-menu>
-	  <li>
-	    <a href="#">Item 1</a>
-	    <ul class="menu vertical nested">
-	      <li><a href="#">Item 1A</a></li>
-	      <li><a href="#">Item 1B</a></li>
-	    </ul>
-	  </li>
-	  <li><a href="#">Item 2</a></li>
-	</ul>
-	
 	<script src="public/odontoweb-deps.min.js"></script>
 	<script src="public/odontoweb-app.min.js"></script>
 </body>

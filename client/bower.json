@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "underscore": "^1.8.3",
-    "foundation-sites": "^6.2.3"
+    "foundation-sites": "^6.2.3",
+    "foundation-icon-fonts": "*"
   }
 }

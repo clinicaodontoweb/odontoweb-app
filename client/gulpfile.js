@@ -10,13 +10,12 @@ var browserSync		= require('browser-sync');
 
 /* tasks */
 gulp.task('default', function(callback){
-	runSequence('deps-js', 'deps-css', 'app-js' , 'app-css');
+	runSequence('deps-js', 'app-js', 'app-css', 'copy-fonts');
 });
 
 gulp.task('watch', function(){
 	gulp.watch('src/resources/js/*.js', ['app-js']);
-	gulp.watch('src/resources/css/*.scss', ['app-css']);
-
+	gulp.watch('src/resources/sass/*.scss', ['app-css']);
 });
 
 gulp.task('deps-js', function (){
@@ -40,21 +39,14 @@ gulp.task('app-js', function (){
 			.pipe(gulp.dest('src/public'));
 });
 
-gulp.task('deps-css', function (){
-	return gulp.src(['src/resources/css/external/foundation-deps.scss'])
-			.pipe(sass({
-				includePaths: ['bower_components/foundation-sites/scss']
-			}))
-			.pipe(rename('odontoweb-deps.css'))
-			.pipe(gulp.dest('src/public'))
-			.pipe(cssmin())
-			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest('src/public'));
-});
-
 gulp.task('app-css', function (){
-	return gulp.src(['src/resources/css/*.scss'])
-			.pipe(sass())
+	return gulp.src(['src/resources/sass/*.scss'])
+			.pipe(sass({
+				includePaths: [
+								'bower_components/foundation-sites/scss/', 
+								'bower_components/foundation-icon-fonts/'
+								]
+			}))
 			.pipe(rename('odontoweb-app.css'))
 			.pipe(gulp.dest('src/public'))
 			.pipe(cssmin())
@@ -62,3 +54,7 @@ gulp.task('app-css', function (){
 			.pipe(gulp.dest('src/public'));
 });
 
+gulp.task('copy-fonts', function() {
+	gulp.src('bower_components/foundation-icon-fonts/*.{ttf,woff,eot,svg}')
+		.pipe(gulp.dest('src/public/fonts'));
+});

@@ -1,0 +1,121 @@
+@import 'settings';
+@import 'foundation';
+@import 'foundation-icons.scss';
+
+@include foundation-everything();
+
+body, html{
+    background-color: $secundary-color;
+    color: $font-color;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#wrapper {
+    padding-left: $sidebar-width;
+    padding-top: $topbar-height;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    @include breakpoint(small only) { 
+        padding-left: $sidebar-small-width;
+    }
+}
+#topbar-wrapper{
+    width: 100%;
+    height: $topbar-height;
+    background-color: #FFFFFF;
+    position: relative;
+    z-index: 1020;
+    
+    #logo-wrapper{
+        padding: 15px;
+        background-color: $base-color;
+        width: $sidebar-width;
+        height: $topbar-height;
+        margin: 0;
+
+        @include breakpoint(small only) { 
+            width: $sidebar-small-width;
+            padding: 15px 0 0 10px;
+        }
+
+        #logo{
+            @include image('logo_white.png');
+            width: 32px;
+            height: 38px;
+            display: block;
+            margin-left: 20px;
+            
+            @include breakpoint(small only) { 
+                margin-left: 8px;
+                padding: 0px;
+            }
+        }
+
+        h6{
+            color: #FFFFFF;
+            font-weight: bold;
+            padding: 8px 0 0 8px;
+
+        }
+    }
+}
+#sidebar-wrapper{
+    z-index: 1000;
+    position: fixed;
+    left: $sidebar-width;
+    width: $sidebar-width;
+    margin-left: -$sidebar-width;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: $sidebar-color;
+    @include transition();
+
+    @include breakpoint(small only) { 
+        left: $sidebar-small-width;
+        width: $sidebar-small-width;
+        margin-left: -$sidebar-small-width;
+    }
+
+    .menu{
+        padding-top: 10px;
+
+        li{
+
+            &.menu-ativo{
+                background-color: $menu-ativo-bg-color;
+
+                a{
+                    color: $menu-ativo-font-color;
+                }
+
+            }
+
+            a{
+                color: $font-color;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.menu > li > a > i {
+    margin-right: 0.75rem;
+}
+#content-wrapper{
+    width: 100%;
+    position: relative;
+    padding: $padding;
+    border-top: 1px solid #d4d4d4;
+}
+
+// fonts icons
+//-------------
+.medium{
+    font-size: 23px;
+}
