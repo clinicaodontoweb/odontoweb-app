@@ -12,6 +12,7 @@ body, html{
     padding: 0;
     margin: 0;
     overflow: hidden;
+    font-weight: 300;
 }
 #wrapper {
     padding-left: $sidebar-width;
@@ -21,9 +22,6 @@ body, html{
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 
-    @include breakpoint(small only) { 
-        padding-left: $sidebar-small-width;
-    }
 }
 #topbar-wrapper{
     width: 100%;
@@ -39,22 +37,12 @@ body, html{
         height: $topbar-height;
         margin: 0;
 
-        @include breakpoint(small only) { 
-            width: $sidebar-small-width;
-            padding: 15px 0 0 10px;
-        }
-
         #logo{
             @include image('logo_white.png');
             width: 32px;
             height: 38px;
             display: block;
             margin-left: 20px;
-            
-            @include breakpoint(small only) { 
-                margin-left: 8px;
-                padding: 0px;
-            }
         }
 
         h6{
@@ -63,6 +51,26 @@ body, html{
             padding: 8px 0 0 8px;
 
         }
+    }
+
+    #user-wrapper{
+        padding: 15px;
+        background-color: transparent;
+        height: $topbar-height;
+        margin: 0;
+
+        .user-name{
+            padding-top: 9px;
+            padding-right: 5px;
+            color: #34495E;
+            font-weight: 500;
+            font-size: 15px;
+        }
+    }
+
+    #clinicaSelected{
+        margin-top: 15px;
+        margin-left: 15px;
     }
 }
 #sidebar-wrapper{
@@ -77,16 +85,18 @@ body, html{
     background: $sidebar-color;
     @include transition();
 
-    @include breakpoint(small only) { 
-        left: $sidebar-small-width;
-        width: $sidebar-small-width;
-        margin-left: -$sidebar-small-width;
-    }
-
     .menu{
-        padding-top: 10px;
+        padding-top: 20px;
 
         li{
+
+            &:hover{
+                background-color: $menu-ativo-bg-color;
+
+                a{
+                    color: $menu-ativo-font-color;
+                 }
+            }
 
             &.menu-ativo{
                 background-color: $menu-ativo-bg-color;
@@ -99,14 +109,17 @@ body, html{
 
             a{
                 color: $font-color;
-                font-weight: bold;
+                font-weight: 400;
+                text-transform: uppercase;
+                font-size: 10pt;
             }
         }
     }
 }
 .menu > li > a > i {
-    margin-right: 0.75rem;
+    margin-right: 25px;
 }
+
 #content-wrapper{
     width: 100%;
     position: relative;
@@ -119,3 +132,11 @@ body, html{
 .medium{
     font-size: 23px;
 }
+
+// mobile styles
+// ---------------
+@import 'custom_mobile';
+
+// button styles
+// ---------------
+@import 'custom_button';

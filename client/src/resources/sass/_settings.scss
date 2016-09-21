@@ -70,7 +70,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Source Sans Pro', sans-serif;
+$body-font-family: 'Roboto', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -244,11 +244,11 @@ $breadcrumbs-item-slash: true;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background: transparent;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-color: $white;
-$button-color-alt: $black;
-$button-radius: $global-radius;
+$button-color: $font-color;
+$button-color-alt: $font-color;
+$button-radius: 5px;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
@@ -562,6 +562,7 @@ $tooltip-font-size: $small-font-size;
 $tooltip-pip-width: 0.75rem;
 $tooltip-pip-height: $tooltip-pip-width * 0.866;
 $tooltip-radius: $global-radius;
+$tooltip-z-index: 10000;
 
 // 36. Top Bar
 // -----------

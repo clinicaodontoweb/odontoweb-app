@@ -5,16 +5,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="public/odontoweb-app.min.css">
-	<link rel="stylesheet" href="public/foundation-icons.min.css">
 
 	<title>OdontoWeb: Sistema para gerenciamento de clínicas odontológicas</title>
 </head>
-<body>
+<body data-ng-app="OdontowebApp">
 		
 	<div id="topbar-wrapper" class="float-left">
 		<div id="logo-wrapper" class="float-left">
 			<div id="logo" class="float-left"></div>
 			<h6 class="float-left show-for-medium">ODONTOWEB</h6>
+		</div>
+		<div id="clinica-wrapper" class="small-4 medium-3 columns float-left">
+			<select name="clinica" id="clinicaSelected">
+				<option value="Clinica Teste">Clinica Teste</option>
+				<option value="Clinica Teste 2">Clinica Teste 2</option>
+			</select>
+		</div>
+		<div id="user-wrapper" class="float-right">
+			<span class="user-name float-left">André Nunes</span>
+			<button type="button" class="button vermelho float-left">SAIR</button>
 		</div>
 	</div>
 	
@@ -23,22 +32,34 @@
 		<div id="sidebar-wrapper">
 			<ul class="menu vertical">
 				<li class="menu-ativo">
-					<a href="#"><i class="fi-calendar medium"></i>Agenda</a>
+					<a href="#/agenda" menu-ativo>
+						<i data-tooltip aria-haspopup="true" title="Agenda" class="fi-calendar medium right"></i>
+						<span class="show-for-medium">Agenda</span>
+					</a>
 				</li>
 				<li>
-					<a href="#"><i class="fi-torsos medium"></i>Pacientes</a>
+					<a href="#/pacientes" menu-ativo>
+						<i data-tooltip aria-haspopup="true" title="Pacientes" class="fi-torsos medium right"></i>
+						<span class="show-for-medium">Pacientes</span>
+					</a>
 				</li>
 				<li>
-					<a href="#"><i class="fi-page-add medium"></i>Cadastrados</a>
+					<a href="#/cadastros" menu-ativo>
+						<i data-tooltip aria-haspopup="true" title="Cadastros" class="fi-page-add medium right"></i>
+						<span class="show-for-medium">Cadastros</span>
+					</a>
 				</li>
 				<li>
-					<a href="#"><i class="fi-widget medium"></i>Configurações</a>
+					<a href="#/configuracoes" menu-ativo>
+						<i data-tooltip aria-haspopup="true" title="Configurações" class="fi-widget medium right"></i>
+						<span class="show-for-medium">Configurações</span>
+					</a>
 				</li>
 			</ul>
 		</div>
 		
 		<!-- CONTEUDO -->
-		<div id="content-wrapper"></div>
+		<div id="content-wrapper" data-ng-view></div>
 	</div>
 
 	<script src="public/odontoweb-deps.min.js"></script>

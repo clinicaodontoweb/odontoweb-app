@@ -22,6 +22,7 @@ gulp.task('deps-js', function (){
 	return gulp.src(['bower_components/jquery/dist/jquery.js',
 					'bower_components/foundation-sites/dist/foundation.js',
 					'bower_components/angular/angular.js',
+					'bower_components/angular-route/angular-route.js',
 					'bower_components/underscore/underscore.js'])
 			.pipe(concat('odontoweb-deps.js'))
 			.pipe(gulp.dest('src/public'))
@@ -31,7 +32,7 @@ gulp.task('deps-js', function (){
 });
 
 gulp.task('app-js', function (){
-	return gulp.src(['src/resources/js/*.js'])
+	return gulp.src(['src/resources/js/**/*.js'])
 			.pipe(concat('odontoweb-app.js'))
 			.pipe(gulp.dest('src/public'))
 			.pipe(uglify())
