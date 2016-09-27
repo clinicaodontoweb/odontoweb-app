@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="public/odontoweb-app.min.css">
+	<link rel="stylesheet" href="public/odontoweb-deps.min.css">
 
 	<title>OdontoWeb: Sistema para gerenciamento de clínicas odontológicas</title>
 </head>
@@ -15,15 +16,15 @@
 			<div id="logo" class="float-left"></div>
 			<h6 class="float-left show-for-medium">ODONTOWEB</h6>
 		</div>
-		<div id="clinica-wrapper" class="small-4 medium-3 columns float-left">
+		<div id="clinica-wrapper" class="small-4 medium-3 columns float-left" data-ng-show="showElement()">
 			<select name="clinica" id="clinicaSelected">
 				<option value="Clinica Teste">Clinica Teste</option>
 				<option value="Clinica Teste 2">Clinica Teste 2</option>
 			</select>
 		</div>
-		<div id="user-wrapper" class="float-right">
-			<span class="user-name float-left">André Nunes</span>
-			<button type="button" class="button vermelho float-left">SAIR</button>
+		<div id="user-wrapper" class="float-right" data-ng-controller="AuthenticationController" data-ng-show="showElement()">
+			<span class="user-name float-left">{{userName()}}</span>
+			<button type="button" class="button vermelho float-left" data-ng-click="logout()">SAIR</button>
 		</div>
 	</div>
 	
