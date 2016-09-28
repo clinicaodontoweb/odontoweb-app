@@ -7,7 +7,7 @@ var watch			= require('gulp-watch');
 var rename			= require('gulp-rename');
 var runSequence		= require('run-sequence');
 var browserSync		= require('browser-sync');
-var path 			= require('path');
+
 /* tasks */
 gulp.task('default', function(callback){
 	runSequence('deps-js', 'app-js', 'app-css', 'deps-css', 'copy-fonts');
@@ -44,9 +44,7 @@ gulp.task('app-js', function (){
 
 gulp.task('app-css', function (){
 	return gulp.src(['client/src/resources/sass/*.scss'])
-			.pipe(sass({
-				includePaths: [path.resolve('bower_components', 'foundation-sites/scss'), 
-								path.resolve('bower_components', 'foundation-icon-fonts')]}))
+			.pipe(sass())
 			.pipe(rename('odontoweb-app.css'))
 			.pipe(gulp.dest('client/src/public'))
 			.pipe(cssmin())
