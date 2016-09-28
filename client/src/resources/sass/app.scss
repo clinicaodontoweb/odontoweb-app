@@ -1,6 +1,6 @@
 @import 'settings';
-@import '../../../../bower_components/foundation-sites/scss/foundation';
-@import '../../../../bower_components/foundation-icon-fonts/foundation-icons.scss';
+@import 'foundation';
+@import 'foundation-icons.scss';
 
 @include foundation-everything();
 
