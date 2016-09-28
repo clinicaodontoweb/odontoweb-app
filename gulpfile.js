@@ -45,8 +45,8 @@ gulp.task('app-js', function (){
 gulp.task('app-css', function (){
 	return gulp.src(['client/src/resources/sass/*.scss'])
 			.pipe(sass({
-				includePaths: [path.resolve('bower_components', 'foundation-sites/scss/'), 
-								path.resolve('bower_components', 'foundation-icon-fonts/')]}))
+				includePaths: [path.resolve('bower_components', 'foundation-sites/scss'), 
+								path.resolve('bower_components', 'foundation-icon-fonts')]}))
 			.pipe(rename('odontoweb-app.css'))
 			.pipe(gulp.dest('client/src/public'))
 			.pipe(cssmin())
