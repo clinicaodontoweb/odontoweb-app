@@ -1,4 +1,5 @@
 **/node_modules
 **/bower_components
 **/*.out
-client/src/public
+client/src/public/*.js
+client/src/public/*.css
