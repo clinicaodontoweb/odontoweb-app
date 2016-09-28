@@ -18,4 +18,8 @@ app.run(['$rootScope', '$location', 'AuthorizationService', function($rootScope,
         return AuthorizationService.isLogged();
     };
 
+    $rootScope.go = function (path) {
+        $location.path(path);
+    };
+
 }]);

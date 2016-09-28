@@ -7,27 +7,32 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
 		})
 		.when('/agenda',
 		{
-			templateUrl: 'partials/agenda.html',
+			templateUrl: 'partials/agenda/index.html',
 			controller: 'AgendaController'
 		})
 		.when('/pacientes',
 		{
-			templateUrl: 'partials/pacientes.html',
+			templateUrl: 'partials/pacientes/index.html',
 			controller: 'PacientesController'
 		})
 		.when('/cadastros',
 		{
-			templateUrl: 'partials/cadastros.html',
+			templateUrl: 'partials/cadastros/index.html',
 			controller: 'CadastrosController'
 		})
 		.when('/configuracoes',
 		{
-			templateUrl: 'partials/configuracoes.html',
+			templateUrl: 'partials/configuracoes/index.html',
 			controller: 'ConfiguracoesController'
+		})
+		.when('/bairro',
+		{
+			templateUrl: 'partials/bairro/index.html',
+			controller: 'BairroController'
 		})
 		.when('/login',
 		{
-			templateUrl: 'partials/login.html',
+			templateUrl: 'partials/authentication/login.html',
 			controller: 'AuthenticationController'
 		})
 		.otherwise({
