@@ -23,7 +23,11 @@
     "url": "https://github.com/clinicaodontoweb/odontoweb-app/issues"
   },
   "homepage": "https://github.com/clinicaodontoweb/odontoweb-app#readme",
-  "devDependencies": {
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "request": "^2.75.0",
     "bower": "^1.7.9",
     "browser-sync": "^2.14.3",
     "gulp": "^3.9.1",
@@ -35,12 +39,6 @@
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",
     "run-sequence": "^1.2.2"
-  },
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.14.0",
-    "request": "^2.75.0"
   },
   "engines": {
     "node": "4.4.7"
