@@ -14,8 +14,8 @@ gulp.task('default', function(callback){
 });
 
 gulp.task('watch', function(){
-	gulp.watch('src/resources/js/**/*.js', ['app-js']);
-	gulp.watch('src/resources/sass/**/*.scss', ['app-css']);
+	gulp.watch('client/src/resources/js/**/*.js', ['app-js']);
+	gulp.watch('client/src/resources/sass/**/*.scss', ['app-css']);
 });
 
 gulp.task('deps-js', function (){
@@ -27,43 +27,43 @@ gulp.task('deps-js', function (){
 					'bower_components/angular-resource/angular-resource.js',
 					'bower_components/underscore/underscore.js'])
 			.pipe(concat('odontoweb-deps.js'))
-			.pipe(gulp.dest('src/public'))
+			.pipe(gulp.dest('client/src/public'))
 			.pipe(uglify())
 			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest('src/public'));
+			.pipe(gulp.dest('client/src/public'));
 });
 
 gulp.task('app-js', function (){
-	return gulp.src(['src/resources/js/**/*.js'])
+	return gulp.src(['client/src/resources/js/**/*.js'])
 			.pipe(concat('odontoweb-app.js'))
-			.pipe(gulp.dest('src/public'))
+			.pipe(gulp.dest('client/src/public'))
 			.pipe(uglify())
 			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest('src/public'));
+			.pipe(gulp.dest('client/src/public'));
 });
 
 gulp.task('app-css', function (){
-	return gulp.src(['src/resources/sass/*.scss'])
+	return gulp.src(['client/src/resources/sass/*.scss'])
 			.pipe(sass({
 				includePaths: ['bower_components/foundation-sites/scss/', 
 								'bower_components/foundation-icon-fonts/']}))
 			.pipe(rename('odontoweb-app.css'))
-			.pipe(gulp.dest('src/public'))
+			.pipe(gulp.dest('client/src/public'))
 			.pipe(cssmin())
 			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest('src/public'));
+			.pipe(gulp.dest('client/src/public'));
 });
 
 gulp.task('deps-css', function (){
 	return gulp.src([])
 			.pipe(rename('odontoweb-deps.css'))
-			.pipe(gulp.dest('src/public'))
+			.pipe(gulp.dest('client/src/public'))
 			.pipe(cssmin())
 			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest('src/public'));
+			.pipe(gulp.dest('client/src/public'));
 });
 
 gulp.task('copy-fonts', function() {
 	gulp.src('bower_components/foundation-icon-fonts/*.{ttf,woff,eot,svg}')
-		.pipe(gulp.dest('src/public/fonts'));
+		.pipe(gulp.dest('client/src/public/fonts'));
 });
