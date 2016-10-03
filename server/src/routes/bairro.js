@@ -1,7 +1,7 @@
 module.exports	=	function(app){
 	
 	var request	= require('request');
-	var service	= 'http://localhost:3334/agenda-service/bairro';
+	var service	= 'http://192.169.169.166:3334/agenda-service/bairro';
 	
 	app.post('/bairro', function (req, res) {
 		request.post({url: service, json: req.body }, function(error, response, body){

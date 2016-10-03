@@ -9,7 +9,6 @@ app.controller('AuthenticationController', ['$scope', '$window', '$location', 'A
 	$scope.login = function() {
 		if ($scope.user.email !== undefined && $scope.user.senha !== undefined) {
 			AuthenticationService.login($scope.user, function(data) {
-				console.log(data);
 				$window.sessionStorage.token = data.token;
 				$location.path("/");
 			},function(status, data) {

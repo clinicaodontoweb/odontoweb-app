@@ -1,1 +1,1 @@
-var app	= angular.module("OdontowebApp", ['ngRoute', 'ngResource', 'angular-jwt']);
+var app	= angular.module("OdontowebApp", ['ngRoute', 'ngResource', 'angular-jwt', 'restangular']);

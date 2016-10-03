@@ -26,6 +26,7 @@ gulp.task('deps-js', function (){
 					'bower_components/angular-jwt/dist/angular-jwt.js',
 					'bower_components/angular-route/angular-route.js',
 					'bower_components/angular-resource/angular-resource.js',
+					'bower_components/restangular/dist/restangular.js',
 					'bower_components/underscore/underscore.js'])
 			.pipe(concat('odontoweb-deps.js'))
 			.pipe(gulp.dest('client/src/public'))

@@ -1,7 +1,7 @@
 module.exports	=	function(app){
 	
 	var request	= require('request');
-	var service	= 'http://localhost:8001/autenticacao-service';
+	var service	= 'http://192.169.169.166:8000/autenticacao-service';
 	
 	app.post('/login', function (req, res) {
 		request.post({

@@ -14,14 +14,35 @@ body, html{
     overflow: hidden;
     font-weight: 300;
 }
-input, select{
+input[type=text], select{
     border-radius: 4px;
     color: $font-color;
     font-weight: 500;
     font-size: 15px;
+    box-shadow: none;
+    margin-bottom: 5px;
 
     option{
         height: 20px;
+    }
+}
+input[type=text]:focus{
+    border: 1px solid $base-color;
+    box-shadow: none;
+}
+input.ng-dirty.ng-valid-parse.ng-empty.ng-invalid.ng-invalid-required.input-error.ng-touched{
+    border: 1px solid red;
+}
+.label-error{
+    color: red;
+}
+.form-action{
+    margin-top: 10px;
+}
+form{
+
+    button{
+        float: right;
     }
 }
 .text-center{
@@ -140,8 +161,10 @@ input, select{
 #content-wrapper{
     width: 100%;
     position: relative;
-    padding: $padding;
+    padding: 30px;
     border-top: 1px solid #d4d4d4;
+    overflow-y: auto;
+    max-height: 600px;
 }
 
 .cadastros-list{
@@ -172,6 +195,13 @@ input, select{
             line-height: 35px;
         }
     }
+}
+table tbody, table tfoot, table thead{
+    border: 1px solid $border-color;
+}
+
+.no-padding{
+    padding:0;
 }
 
 // fonts icons
