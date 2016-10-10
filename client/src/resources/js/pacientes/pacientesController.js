@@ -1,5 +1,5 @@
 app.controller('PacientesController', ['$scope', function($scope){
 
-	$scope.title	= "Pacientes Controller";
+	$scope.title	= "Página em contrução";
 
 }]);

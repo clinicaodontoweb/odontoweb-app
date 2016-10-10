@@ -22,7 +22,7 @@
 			</select>
 		</div>
 		<div id="user-wrapper" class="float-right" data-ng-controller="AuthenticationController">
-			<span class="user-name float-left" data-ng-show="showElement()">{{userName()}}</span>
+			<span class="user-name float-left show-for-medium" data-ng-show="showElement()">{{userName()}}</span>
 			<button type="button" class="button vermelho float-left" data-ng-click="logout()" data-ng-show="showElement()">SAIR</button>
 			<button type="button" class="button azul float-left" data-ng-click="go('/login')" data-ng-show="!showElement()">ENTRAR</button>
 		</div>
