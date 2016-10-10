@@ -168,8 +168,9 @@ form{
 }
 
 .cadastros-list{
-    display: block;
+    display: inline;
     list-style: none;
+    width: 100%;
 
     .cadastros-list-item{
         background-color: $base-color;
@@ -197,7 +198,48 @@ form{
     }
 }
 table tbody, table tfoot, table thead{
-    border: 1px solid $border-color;
+}
+
+table{
+
+    thead{
+
+        tr{
+
+            height: 50px;
+
+            th{
+                color: #FFFFFF;
+                font-weight: 500;
+                font-size: 11pt;
+                padding: 0 0 0 5px;
+            }
+        }
+    }
+
+    tbody{
+
+        tr{
+            height: 45px;
+            
+            &:hover{
+                background-color: #e2e2e2;
+                cursor: pointer;
+            }
+
+
+            td{
+                padding: 0 0 0 5px;
+                font-size: 11pt;
+                color: #637189;
+
+
+                &.table-actions{
+                    width: 100px;       
+                }
+            }
+        }
+    }
 }
 
 .no-padding{
@@ -208,6 +250,14 @@ table tbody, table tfoot, table thead{
 //-------------
 .medium{
     font-size: 23px;
+}
+
+// breadcrumbs
+//-------------
+.breadcrumbs{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 // mobile styles

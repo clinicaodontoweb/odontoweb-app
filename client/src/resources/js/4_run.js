@@ -1,8 +1,8 @@
 app.run(['$rootScope', '$location', 'AuthorizationService', function($rootScope, $location, AuthorizationService) {
     
     $rootScope.$on("$routeChangeStart", function(event, nextRoute, currentRoute) {
-        if (!nextRoute.hasOwnProperty('requireLogin') && !AuthorizationService.isLogged()) {
-    		$location.path("/login");
+        if(!nextRoute.$$route.hasOwnProperty('requireLogin') && !AuthorizationService.isLogged()) {
+            $location.path("/login");
         }
     });
 
