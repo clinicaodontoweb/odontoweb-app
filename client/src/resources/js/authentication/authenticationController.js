@@ -1,4 +1,4 @@
-app.controller('AuthenticationController', ['$scope', '$window', '$location', 'AuthenticationService', 'AuthorizationService', function($scope, $window, $location, AuthenticationService, AuthorizationService){
+app.controller('AuthenticationController', ['$scope', '$window', '$location', 'AuthenticationService', 'AuthorizationService', '$rootScope', function($scope, $window, $location, AuthenticationService, AuthorizationService, $rootScope){
 	
 	$scope.title	= "Acesso ao Sistema";
 	$scope.subTitle	= "Preencha os dados de seu login para acessar o sistema.";
@@ -10,6 +10,7 @@ app.controller('AuthenticationController', ['$scope', '$window', '$location', 'A
 		if ($scope.user.email !== undefined && $scope.user.senha !== undefined) {
 			AuthenticationService.login($scope.user, function(data) {
 				$window.sessionStorage.token = data.token;
+				$rootScope.$broadcast('loginEvent');
 				$location.path("/");
 			},function(status, data) {
 				$scope.erro = true;

@@ -9,6 +9,9 @@ app.factory('AuthorizationService', ['$window', 'jwtHelper', function($window, j
         },
         getUserName: function(){ 
         	return ($window.sessionStorage.token != undefined) ? jwtHelper.decodeToken($window.sessionStorage.token).sub : ''; 
+        },
+        getTenant: function(){ 
+            return ($window.sessionStorage.token != undefined) ? jwtHelper.decodeToken($window.sessionStorage.token).tenant : ''; 
         }
     }
  

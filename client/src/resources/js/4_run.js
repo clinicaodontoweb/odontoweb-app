@@ -7,7 +7,6 @@ app.run(['$rootScope', '$location', 'AuthorizationService', function($rootScope,
     });
 
     $rootScope.$on("$viewContentLoaded", function(event){
-        console.log("content");
         $('#content-wrapper').height($(window).height() - 120);
     });
 

@@ -16,10 +16,9 @@
 			<h6 class="float-left show-for-medium">ODONTOWEB</h6>
 		</div>
 		<div id="clinica-wrapper" class="small-4 medium-3 columns float-left" data-ng-show="showElement()">
-			<select name="clinica" id="clinicaSelected">
-				<option value="Clinica Teste">Clinica Teste</option>
-				<option value="Clinica Teste 2">Clinica Teste 2</option>
-			</select>
+			<div data-ng-controller="ClinicaController">
+				<select name="clinica" id="clinicaSelected" data-ng-options="option.nome for option in me.clinicas track by option.nome" data-ng-model="clinicaSelected" data-ng-change="changeTenant()"></select>
+			</div>
 		</div>
 		<div id="user-wrapper" class="float-right" data-ng-controller="AuthenticationController">
 			<span class="user-name float-left show-for-medium" data-ng-show="showElement()">{{userName()}}</span>
